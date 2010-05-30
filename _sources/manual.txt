@@ -1,0 +1,72 @@
+****************************
+実行
+****************************
+
+GoldenCheetahの起動
+===============================================
+
+MacOSX上でGoldenCheetahを起動するにはアプリケーションフォルダを開き、GoldenCheetahアイコンをダブルクリックしてください。Linux上でGoldenCheetahを起動するにはコマンドラインから *GoldenCheetah* とタイプしてください。
+
+最初にGoldenCheetahを起動すると、 *"Choose a Cyclist"* ダイアログが表示されます。:
+
+.. image:: images/choose_cyclist_dialog.png
+
+*"New..."* をクリックして任意の名前を入力してください。:
+
+.. image:: images/input_cyclist_name.png
+
+次に、サイクリストを選択（さきほど入力したサイクリスト名がダイアログに表示されているはずですね？）してから *"Open"* ボタンをクリックするとGoldenCheetahのメインウィンドウが開きます。
+
+.. image:: images/choose_cyclist_dialog2.png
+.. image:: images/gc_main_window.png
+
+メインウィンドウにはもちろん *ライド* [#f1]_ は存在しません。
+ライドはCycleOps CerevoやSRM PowerControlなどサイクルコンピューターからの直接ダウンロード、他のトレーニングツールの保存データを取り込むことで作成されます。
+また、不幸にも何らかのトラブルでデータが保存されていない場合には、手動でトレーニング時間や距離を入力することでBikeScore / DanielsPointを推定することも出来ます。 [#f2]_
+
+PowerTap / SRMから直接データを取り込むには *Ride* メニューから *Download from device...* を選択します。
+ファイルを取り込むには *Ride* メニューから *Import from file...* を選択します。
+
+* Garmin
+
+ * Garmin TCXファイル
+ * Garmin FITファイル
+
+* CycleOps
+
+ * Cerevo
+ * PowerAgent CSVファイル
+
+
+ライドをダウンロードするか取り込みを行うと、 *"Ride Summary"* ページで乗車時間や平均出力などの、シンプルな統計を見ることが出来ます。
+また、 *"Notes"* タブではライドのメモを記録することが出来ます。
+
+.. image:: images/gc_ride_summary.png
+
+ウィンドウ上部の *"Ride Plot"* タブをクリックすると、ライド全体の速度、出力、ケイデンス、心拍数、標高などのグラフを見ることが出来ます。
+
+.. image:: images/gc_ride_plot.png
+
+*"Histgrams"* タブは、どのような出力域で、どのくらいの時間走行したか確認できます。
+
+.. image:: images/gc_histgrams.png
+
+*"Weekly Summary"* では、選択したライドの統計を見ることが出来ます。
+
+.. image:: images/gc_weeklysummary.png
+
+*"Critical Power Plot"* はGoldenCheetahの便利な機能の一つです。これは、保存されているライドの各インターバルで、最も高い平均出力を表示します。 *"Mean Maximal Power Graph*" として知っている方もいるでしょう。緑色の線は選択中のライドの、赤い線は全体のライドの出力です(もしライドが一つしか登録されていなければ、二つの線は重なって表示されます)。グラフをクリックすると青い線が表示され、クリックした部分のインターバル長や出力がウィンドウの下部に表示されます。
+
+.. image:: images/gc_cp_plot.png
+
+次のような考察の助けになるでしょう。:
+
+In this example, the blue line is right around the 14-second mark on the x-axis. So the values shown under "Today" and "All Rides", at the bottom, are the hardest the cyclist went for any 14-second period during the ride itself and during all rides he's ever recorded in GoldenCheetah. Since the two values are the same, he set a new personal record during this ride.
+
+この例では、
+
+*Critical Power Plot* は、インターバル練習やタイムトライアルを行う際にとても役に立ちます。あなたが2分インターバル（3分REST)を6本行なおうとしたとします。 *Critical Power Plot* のグラフをクリックし、ウィンドウ下部の *"Interval Duration "* が2分になるようにドラッグし、 *"Best"* の値を読みましょう。その値が、あなたの過去に行った最もハードなインターバルトレーニングの出力です。さあ頑張って！
+
+
+.. [#f1] GoldenCheetahでは個々のトレーニングログを *ライド* と呼びます。
+.. [#f2] トレーニングのログとしては不完全なものですが、短期、長期のトレーニングストレスやストレスバランスを算出するには有用でしょう。少なくとも、ライドに穴が空いて、計算できないよりはるかにマシといえます。

@@ -1,0 +1,177 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>インストール &mdash; GoldenCheetah Doc Ja v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="GoldenCheetah Doc Ja v0.1 documentation" href="index.html" />
+    <link rel="next" title="実行" href="manual.html" />
+    <link rel="prev" title="はじめに" href="intro.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="manual.html" title="実行"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="はじめに"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">GoldenCheetah Doc Ja v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>インストール<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="step-1-ftdi-usb">
+<h2>Step 1: FTDI USBドライバのインストール<a class="headerlink" href="#step-1-ftdi-usb" title="Permalink to this headline">¶</a></h2>
+<p>Depending on your operating system, you may need to install the FTDI USB driver if you&#8217;re using the PowerTap&#8217;s new USB download cradle. The FTDI USB drivers are an optional install if you do not plan on downloading from your device using Golden Cheetah. (Note: version 1.7 of the FTDI drivers for Mac seems to be buggy. Until they post a patched version, you can download version 1.6 here.)</p>
+<p>もしあなたがPowerTapの新しいUSBクレードルを使っているなら、あなたのコンピュータ向けの :FTDI USB driver: が必要です。
+CycleOps Cerevoのデータを直接GoldenCheetahに読み込むなら、FTDI USBドライバを追加でインストールしてください。</p>
+<p>CycleOps Cerevoからの直接ダウンロードを行うなら、あなたのコンピュータ向けの :FTDI USB driver:<cite>FTDI USBドライバ</cite> FTDI USBドライバが必要です。</p>
+<p>If you&#8217;re running Linux, you may also need to uninstall the brtty (Braille TTY) application, as it interferes with FTDI&#8217;s driver. The command:</p>
+<div class="highlight-python"><pre>sudo apt-get remove brtty</pre>
+</div>
+<p>Linuxを使用しているのであれば、brttyアプリケーションをアンストール擦る必要があります。GoldenCheetahは :FTDI USB driver: を使用します。次のコマンドでbrttyをアンインストールします:</p>
+<div class="highlight-python"><pre>sudo apt-get remove brtty</pre>
+</div>
+<p>should do the trick on Debian/Ubuntu.</p>
+<p>The latest version (7.1.1) of Saris&#8217;s PowerAgent software uses an incompatible version of FTDI&#8217;s driver from the one GoldenCheetah uses, and PowerAgent removes the driver that GoldenCheetah needs when you install PowerAgent. If you want to run both GoldenCheetah and PowerAgent, you need to use PowerAgent version 7.0.1 or earlier. We&#8217;re working to correct this problem, but we&#8217;re not there yet.</p>
+<p>最新版のSaris PowerAgent <a class="footnote-reference" href="#f1" id="id2">[1]</a> はGoldenCheetahと互換性のないFTDI USBドライバを使用しています。そして、PowerAgentはGoldenCheetahが必要とするドライバを削除します。もしPowerAgentとGoldenCheetahを同時に利用したい場合、PowerAgent 7.0.1以前を利用してください。わたしたちはこの問題を修正していますが、まだ完了していません。</p>
+</div>
+<div class="section" id="step-2-goldencheetah">
+<h2>Step 2: GoldenCheetahのインストール<a class="headerlink" href="#step-2-goldencheetah" title="Permalink to this headline">¶</a></h2>
+<p>GoldenCheetahのインストールを行うには、まず、 <a class="reference external" href="http://goldencheetah.org/download.html">GoldenCheetahダウンロードページ</a> からご利用のオペレーティングシステム向けのパッケージをダウンロードして下さい。</p>
+<div class="section" id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<p>Windows向けGoldenCheetahのダウンロードファイルはインストーラになっています。</p>
+<p>ダウンロードされたファイルをダブルクリックして実行し、ウィザードに従ってインストールを行ってください。</p>
+</div>
+<div class="section" id="macosx">
+<h3>MacOSX<a class="headerlink" href="#macosx" title="Permalink to this headline">¶</a></h3>
+<p>GoldenCheetahのダウンロードが完了すると自動的にdmgファイルがマウントされます。
+もしマウントされないときは、ダウンロードしたdmgファイルをダブルクリックしてマウントします。
+マウントされたディスクイメージから、GoldenCheetahのアイコンをアプリケーションフォルダにドラッグ&amp;ドロップするとインストールが完了します。</p>
+</div>
+<div class="section" id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
+<p>Linux版のGoldenCheetahはtar.gz形式で配布されます。
+32bit OSの場合にはLinux_x86のファイルを、64bit OSの場合にはLinux_x86_64のファイルをダウンロードして下さい。
+tar.gz形式のファイルを /tmp ディレクトリに展開し、インストールを行うには次のコマンドを実行します:</p>
+<div class="highlight-python"><pre>cd /tmp
+tar xzvf GoldenCheetah_DATE_Linux_x86.tgz
+cd GoldenCheetah_DATE_Linux_x86
+sudo cp GoldenCheetah /usr/local/bin
+cd ..
+rm -rf GoldenCheetah_DATE_Linux_x86.tgz</pre>
+</div>
+<p>※コマンド中のDATE部分はあなたがダウンロードしたファイルのリビジョンに置き換えてください。</p>
+<hr class="docutils" />
+<p>:FTDI USB driver:<cite>FTDI USBドライバ</cite></p>
+<p class="rubric">脚注</p>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Saris PowerAgent 7.1.1を用いた検証結果</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">インストール</a><ul>
+<li><a class="reference internal" href="#step-1-ftdi-usb">Step 1: FTDI USBドライバのインストール</a></li>
+<li><a class="reference internal" href="#step-2-goldencheetah">Step 2: GoldenCheetahのインストール</a><ul>
+<li><a class="reference internal" href="#windows">Windows</a></li>
+<li><a class="reference internal" href="#macosx">MacOSX</a></li>
+<li><a class="reference internal" href="#linux">Linux</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="intro.html"
+                        title="previous chapter">はじめに</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="manual.html"
+                        title="next chapter">実行</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/install.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="manual.html" title="実行"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="はじめに"
+             >previous</a> |</li>
+        <li><a href="index.html">GoldenCheetah Doc Ja v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Mitsukuni Sato &lt;mitsukuni.sato@gmail.com&gt;.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0b1.
+    </div>
+  </body>
+</html>

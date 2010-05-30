@@ -1,0 +1,79 @@
+
+**********************************************
+インストール
+**********************************************
+
+Step 1: FTDI USBドライバのインストール
+===============================================
+
+Depending on your operating system, you may need to install the FTDI USB driver if you're using the PowerTap's new USB download cradle. The FTDI USB drivers are an optional install if you do not plan on downloading from your device using Golden Cheetah. (Note: version 1.7 of the FTDI drivers for Mac seems to be buggy. Until they post a patched version, you can download version 1.6 here.)
+
+
+もしあなたがPowerTapの新しいUSBクレードルを使っているなら、あなたのコンピュータ向けの :FTDI USB driver: が必要です。
+CycleOps Cerevoのデータを直接GoldenCheetahに読み込むなら、FTDI USBドライバを追加でインストールしてください。
+
+CycleOps Cerevoからの直接ダウンロードを行うなら、あなたのコンピュータ向けの :FTDI USB driver:`FTDI USBドライバ` FTDI USBドライバが必要です。
+
+
+
+If you're running Linux, you may also need to uninstall the brtty (Braille TTY) application, as it interferes with FTDI's driver. The command::
+
+  sudo apt-get remove brtty
+
+Linuxを使用しているのであれば、brttyアプリケーションをアンストール擦る必要があります。GoldenCheetahは :FTDI USB driver: を使用します。次のコマンドでbrttyをアンインストールします::
+
+  sudo apt-get remove brtty
+
+should do the trick on Debian/Ubuntu.
+
+The latest version (7.1.1) of Saris's PowerAgent software uses an incompatible version of FTDI's driver from the one GoldenCheetah uses, and PowerAgent removes the driver that GoldenCheetah needs when you install PowerAgent. If you want to run both GoldenCheetah and PowerAgent, you need to use PowerAgent version 7.0.1 or earlier. We're working to correct this problem, but we're not there yet.
+
+最新版のSaris PowerAgent [#f1]_ はGoldenCheetahと互換性のないFTDI USBドライバを使用しています。そして、PowerAgentはGoldenCheetahが必要とするドライバを削除します。もしPowerAgentとGoldenCheetahを同時に利用したい場合、PowerAgent 7.0.1以前を利用してください。わたしたちはこの問題を修正していますが、まだ完了していません。
+
+Step 2: GoldenCheetahのインストール
+===============================================
+
+GoldenCheetahのインストールを行うには、まず、 `GoldenCheetahダウンロードページ <http://goldencheetah.org/download.html>`_ からご利用のオペレーティングシステム向けのパッケージをダウンロードして下さい。
+
+Windows
+------------------------
+
+Windows向けGoldenCheetahのダウンロードファイルはインストーラになっています。
+
+ダウンロードされたファイルをダブルクリックして実行し、ウィザードに従ってインストールを行ってください。
+
+
+MacOSX
+-----------------------
+
+GoldenCheetahのダウンロードが完了すると自動的にdmgファイルがマウントされます。
+もしマウントされないときは、ダウンロードしたdmgファイルをダブルクリックしてマウントします。
+マウントされたディスクイメージから、GoldenCheetahのアイコンをアプリケーションフォルダにドラッグ&ドロップするとインストールが完了します。
+
+Linux
+-----------------------
+
+Linux版のGoldenCheetahはtar.gz形式で配布されます。
+32bit OSの場合にはLinux_x86のファイルを、64bit OSの場合にはLinux_x86_64のファイルをダウンロードして下さい。
+tar.gz形式のファイルを /tmp ディレクトリに展開し、インストールを行うには次のコマンドを実行します::
+
+  cd /tmp
+  tar xzvf GoldenCheetah_DATE_Linux_x86.tgz
+  cd GoldenCheetah_DATE_Linux_x86
+  sudo cp GoldenCheetah /usr/local/bin
+  cd ..
+  rm -rf GoldenCheetah_DATE_Linux_x86.tgz
+
+※コマンド中のDATE部分はあなたがダウンロードしたファイルのリビジョンに置き換えてください。
+
+
+
+
+----
+
+
+:FTDI USB driver:`FTDI USBドライバ`
+
+.. rubric:: 脚注
+
+.. [#f1] Saris PowerAgent 7.1.1を用いた検証結果

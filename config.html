@@ -1,0 +1,206 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>設定 &mdash; GoldenCheetah Doc Ja v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="GoldenCheetah Doc Ja v0.1 documentation" href="index.html" />
+    <link rel="prev" title="実行" href="manual.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="manual.html" title="実行"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">GoldenCheetah Doc Ja v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>設定<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>パワーゾーンの設定<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>If you look back at the screenshot above, you may notice that there are several things shown in the &#8220;Ride Summary&#8221; tab that aren&#8217;t on your version. The picture above shows a non-zero &#8220;Bike Score&#8221;, and there&#8217;s a list of how much time the cyclist spent in each &#8220;Power Zone&#8221; during the ride as well.</p>
+<p>BikeScore(TM) is a measure of the physiological stress you underwent during a ride. It was developed by Dr. Philip Skiba, and you can read more about it in an article he wrote.</p>
+<p>For GoldenCheetah to compute your BikeScore and the time spent in each power zone, you first need to tell it what your power zones and critical power are. You can define your power zones however you like, maybe using the ones defined by Joe Friel, for example. Your critical power should be the maximum power you can sustain over an hour. Some people call this your &#8220;lactate threshold&#8221; or &#8220;functional threshold power&#8221;. Our friend Bill says a rose by any other name would smell as sweet.</p>
+<p>There are currently three ways to set up your power zones. Each method has its benefits, so feel free to select the method that best suits your needs.</p>
+<p>Method 1: Set via critical power plot.</p>
+<p>GoldenCheetah can determine a value for your CP value based on all of the data in your critical power plot. The calculated value of CP can be used to create a new range in your power.zones file by clicking the &#8220;save CP value&#8221; button in the lower right corner of the critical power plot tab. The new range will use the default zone definitions (see Method 2). Once the new range is set, you can manually edit the file to change the zone definitions as in Method 3.</p>
+<p>Method 2: User preferences.</p>
+<p>From the menu bar select GoldenCheetah-&gt;Preferences, then click on &#8220;cyclist info&#8221;. The window should look like this:</p>
+<p>Enter a value for critical power at the top of the dialog and click save to set your CP. New ranges can also be set via this dialog so that you can adjust your CP value throughout the season as your fitness increases (or decreases). Once your CP is set, GoldenCheetah will set up seven power zones based on percentages of your CP value. The zones are:</p>
+<p>Zone    Description     Low     High
+Z1      Active Recovery 0%      55%
+Z2      Endurance       55%     75%
+Z3      Tempo   75%     90%
+Z4      Threshold       90%     105%
+Z5      VO2 Max 105%    120%
+Z6      Anaerobic       120%    150%
+Z1      Neuromuscular   150%    MAX
+If you want to use other zones boundaries or labels, you can manually edit the power.zones file as described in Method 3.</p>
+<p>Method 3: Manually edit the power.zones file.</p>
+<p>To edit/create the power.zones file you&#8217;ll need to use a text editor. On Linux, that probably means nano, vi, or emacs. On Mac, the easiest editor to use is TextEdit, which is in your Applications folder.</p>
+<p>Start by downloading this sample file and saving it in your rider directory, which is listed in the GoldenCheetah-&gt;About GoldenCheetah menu item.</p>
+<p>Open the power.zones file in a text editor and you&#8217;ll see this:</p>
+<div class="highlight-python"><pre>From BEGIN until 2006/07/17, CP=297:
+  1, Active Recovery,     122, 167
+  2, Endurance,           167, 228
+  3, Tempo,               228, 274
+  4, Lactate Threshold,   274, 319
+  5, VO2 Max,             319, 365
+  6, Anaerobic Capacity,  365, 678
+  7, Sprinting,           678, MAX
+
+From 2006/07/17 until 2007/02/05, CP=329:
+  1, Active Recovery,     135, 185
+  2, Endurance,           185, 253
+  3, Tempo,               253, 303
+  4, Lactate Threshold,   303, 354
+  5, VO2 Max,             354, 404
+  6, Anaerobic Capacity,  404, 752
+  7, Sprinting,           752, MAX
+
+From 2007/02/05 until END, CP=347:
+  1, Active Recovery,     139, 191
+  2, Endurance,           191, 260
+  3, Tempo,               260, 312
+  4, Lactate Threshold,   312, 364
+  5, VO2 Max,             364, 416
+  6, Anaerobic Capacity,  416, 774
+  7, Sprinting,           774, MAX</pre>
+</div>
+<p>The format of the file is simple. You define a range of time, starting with a date or &#8220;BEGIN&#8221; to indicate the oldest possible time and ending with a date or &#8220;END&#8221; to indicate the latest possible time. Then you put your critical power (CP) for that date range. Then you list your zones, where each zone has a number, a name, a minimum power value, and a maximum power value. You can have as many time ranges and zones as you like. Most people enter a new time range every time their critical power goes up&#8211;right after a fitness test, for example.</p>
+<p>NOTE: By default, Mac OS&#8217;s TextEdit will try and save the power.zones file with a .txt extension. Use the menu command &#8220;Format-&gt;Make Plain Text&#8221; to get it to let you save the file with a .zones extension instead.</p>
+<p>Legacy Command-Line Tools</p>
+<p>You can still build the older, command-line tools from the source code, but we no longer include them in releases. You can find documentation for them here.</p>
+</div>
+<div class="section" id="id3">
+<h2>シーズンファイル<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>自分にとっての区切りの日付を入れる。入力した日付はCPカーブプロットの右下のタブに反映され、期間別のCPカーブを見られるようになる。:</p>
+<div class="highlight-python"><pre>&lt;?xml version="1.0"?&gt;
+&lt;seasons&gt;
+  &lt;season&gt;
+    &lt;name&gt;Long Ago&lt;/name&gt;
+    &lt;startdate&gt;2005-01-01&lt;/startdate&gt;
+    &lt;enddate&gt;2009-05-01&lt;/enddate&gt;
+  &lt;/season&gt;
+  &lt;season&gt;
+    &lt;name&gt;Road Season 2010&lt;/name&gt;
+    &lt;startdate&gt;2009-12-01&lt;/startdate&gt;
+    &lt;enddate&gt;2010-10-01&lt;/enddate&gt;
+  &lt;/season&gt;
+&lt;/seasons&gt;</pre>
+</div>
+</div>
+<div class="section" id="macosx">
+<h2>MacOSX上で日本語入力を行う<a class="headerlink" href="#macosx" title="Permalink to this headline">¶</a></h2>
+<p>標準の設定ではGoldenCheetahのトレーニングノートに日本語を入力することが出来ません（正しくは、日本語を入力しても消えてしまいます）。
+これはMacOSX版のQt4の問題で、MacOSXを適切に設定することで解決することが出来ます。</p>
+<p>アプリケーション&gt;ユーティリティからターミナルを開き、以下のようにタイプします。:</p>
+<div class="highlight-python"><pre>mkdir ~/.MacOSX
+cd ~/.MacOSX
+cat &gt;&gt; environment.plist</pre>
+</div>
+<p>ターミナル上に次の設定ファイルをコピー＆ペーストしてください。:</p>
+<div class="highlight-python"><pre>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+ &lt;plist version="1.0"&gt;
+ &lt;dict&gt;
+    &lt;key&gt;LANG&lt;/key&gt;
+    &lt;string&gt;ja_JP.UTF-8&lt;/string&gt;
+    &lt;key&gt;PATH&lt;/key&gt;
+    &lt;string&gt;/opt/local/bin:/opt/local/sbin/:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin&lt;/string&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;</pre>
+</div>
+<p>最後にControlキーとDを同時に押してコマンドプロンプトに戻ってから、ターミナルを終了してください。</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">設定</a><ul>
+<li><a class="reference internal" href="#id2">パワーゾーンの設定</a></li>
+<li><a class="reference internal" href="#id3">シーズンファイル</a></li>
+<li><a class="reference internal" href="#macosx">MacOSX上で日本語入力を行う</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="manual.html"
+                        title="previous chapter">実行</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/config.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="manual.html" title="実行"
+             >previous</a> |</li>
+        <li><a href="index.html">GoldenCheetah Doc Ja v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Mitsukuni Sato &lt;mitsukuni.sato@gmail.com&gt;.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0b1.
+    </div>
+  </body>
+</html>

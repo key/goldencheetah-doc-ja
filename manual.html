@@ -1,0 +1,178 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>実行 &mdash; GoldenCheetah Doc Ja v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="GoldenCheetah Doc Ja v0.1 documentation" href="index.html" />
+    <link rel="next" title="設定" href="config.html" />
+    <link rel="prev" title="インストール" href="install.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="config.html" title="設定"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="install.html" title="インストール"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">GoldenCheetah Doc Ja v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>実行<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goldencheetah">
+<h2>GoldenCheetahの起動<a class="headerlink" href="#goldencheetah" title="Permalink to this headline">¶</a></h2>
+<p>MacOSX上でGoldenCheetahを起動するにはアプリケーションフォルダを開き、GoldenCheetahアイコンをダブルクリックしてください。Linux上でGoldenCheetahを起動するにはコマンドラインから <em>GoldenCheetah</em> とタイプしてください。</p>
+<p>最初にGoldenCheetahを起動すると、 <em>&#8220;Choose a Cyclist&#8221;</em> ダイアログが表示されます。:</p>
+<img alt="_images/choose_cyclist_dialog.png" src="_images/choose_cyclist_dialog.png" />
+<p><em>&#8220;New...&#8221;</em> をクリックして任意の名前を入力してください。:</p>
+<img alt="_images/input_cyclist_name.png" src="_images/input_cyclist_name.png" />
+<p>次に、サイクリストを選択（さきほど入力したサイクリスト名がダイアログに表示されているはずですね？）してから <em>&#8220;Open&#8221;</em> ボタンをクリックするとGoldenCheetahのメインウィンドウが開きます。</p>
+<img alt="_images/choose_cyclist_dialog2.png" src="_images/choose_cyclist_dialog2.png" />
+<img alt="_images/gc_main_window.png" src="_images/gc_main_window.png" />
+<p>メインウィンドウにはもちろん <em>ライド</em> <a class="footnote-reference" href="#f1" id="id2">[1]</a> は存在しません。
+ライドはCycleOps CerevoやSRM PowerControlなどサイクルコンピューターからの直接ダウンロード、他のトレーニングツールの保存データを取り込むことで作成されます。
+また、不幸にも何らかのトラブルでデータが保存されていない場合には、手動でトレーニング時間や距離を入力することでBikeScore / DanielsPointを推定することも出来ます。 <a class="footnote-reference" href="#f2" id="id3">[2]</a></p>
+<p>PowerTap / SRMから直接データを取り込むには <em>Ride</em> メニューから <em>Download from device...</em> を選択します。
+ファイルを取り込むには <em>Ride</em> メニューから <em>Import from file...</em> を選択します。</p>
+<ul class="simple">
+<li>Garmin</li>
+</ul>
+<blockquote>
+<ul class="simple">
+<li>Garmin TCXファイル</li>
+<li>Garmin FITファイル</li>
+</ul>
+</blockquote>
+<ul class="simple">
+<li>CycleOps</li>
+</ul>
+<blockquote>
+<ul class="simple">
+<li>Cerevo</li>
+<li>PowerAgent CSVファイル</li>
+</ul>
+</blockquote>
+<p>ライドをダウンロードするか取り込みを行うと、 <em>&#8220;Ride Summary&#8221;</em> ページで乗車時間や平均出力などの、シンプルな統計を見ることが出来ます。
+また、 <em>&#8220;Notes&#8221;</em> タブではライドのメモを記録することが出来ます。</p>
+<img alt="_images/gc_ride_summary.png" src="_images/gc_ride_summary.png" />
+<p>ウィンドウ上部の <em>&#8220;Ride Plot&#8221;</em> タブをクリックすると、ライド全体の速度、出力、ケイデンス、心拍数、標高などのグラフを見ることが出来ます。</p>
+<img alt="_images/gc_ride_plot.png" src="_images/gc_ride_plot.png" />
+<p><em>&#8220;Histgrams&#8221;</em> タブは、どのような出力域で、どのくらいの時間走行したか確認できます。</p>
+<img alt="_images/gc_histgrams.png" src="_images/gc_histgrams.png" />
+<p><em>&#8220;Weekly Summary&#8221;</em> では、選択したライドの統計を見ることが出来ます。</p>
+<img alt="_images/gc_weeklysummary.png" src="_images/gc_weeklysummary.png" />
+<p><em>&#8220;Critical Power Plot&#8221;</em> はGoldenCheetahの便利な機能の一つです。これは、保存されているライドの各インターバルで、最も高い平均出力を表示します。 <em>&#8220;Mean Maximal Power Graph</em>&#8221; として知っている方もいるでしょう。緑色の線は選択中のライドの、赤い線は全体のライドの出力です(もしライドが一つしか登録されていなければ、二つの線は重なって表示されます)。グラフをクリックすると青い線が表示され、クリックした部分のインターバル長や出力がウィンドウの下部に表示されます。</p>
+<img alt="_images/gc_cp_plot.png" src="_images/gc_cp_plot.png" />
+<p>次のような考察の助けになるでしょう。:</p>
+<p>In this example, the blue line is right around the 14-second mark on the x-axis. So the values shown under &#8220;Today&#8221; and &#8220;All Rides&#8221;, at the bottom, are the hardest the cyclist went for any 14-second period during the ride itself and during all rides he&#8217;s ever recorded in GoldenCheetah. Since the two values are the same, he set a new personal record during this ride.</p>
+<p>この例では、</p>
+<p><em>Critical Power Plot</em> は、インターバル練習やタイムトライアルを行う際にとても役に立ちます。あなたが2分インターバル（3分REST)を6本行なおうとしたとします。 <em>Critical Power Plot</em> のグラフをクリックし、ウィンドウ下部の <em>&#8220;Interval Duration &#8220;</em> が2分になるようにドラッグし、 <em>&#8220;Best&#8221;</em> の値を読みましょう。その値が、あなたの過去に行った最もハードなインターバルトレーニングの出力です。さあ頑張って！</p>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>GoldenCheetahでは個々のトレーニングログを <em>ライド</em> と呼びます。</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td>トレーニングのログとしては不完全なものですが、短期、長期のトレーニングストレスやストレスバランスを算出するには有用でしょう。少なくとも、ライドに穴が空いて、計算できないよりはるかにマシといえます。</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">実行</a><ul>
+<li><a class="reference internal" href="#goldencheetah">GoldenCheetahの起動</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="install.html"
+                        title="previous chapter">インストール</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="config.html"
+                        title="next chapter">設定</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/manual.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="config.html" title="設定"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="install.html" title="インストール"
+             >previous</a> |</li>
+        <li><a href="index.html">GoldenCheetah Doc Ja v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Mitsukuni Sato &lt;mitsukuni.sato@gmail.com&gt;.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0b1.
+    </div>
+  </body>
+</html>
