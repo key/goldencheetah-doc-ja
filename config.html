@@ -8,8 +8,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <title>設定 &mdash; GoldenCheetah Doc Ja v0.1 documentation</title>
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/print.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -22,28 +23,30 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/theme_extras.js"></script>
     <link rel="top" title="GoldenCheetah Doc Ja v0.1 documentation" href="index.html" />
-    <link rel="prev" title="実行" href="manual.html" /> 
+    <link rel="next" title="よくある質問と回答" href="faq.html" />
+    <link rel="prev" title="使い方" href="manual.html" /> 
   </head>
   <body>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="manual.html" title="実行"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">GoldenCheetah Doc Ja v0.1 documentation</a> &raquo;</li> 
-      </ul>
-    </div>  
+      <div class="header"><h1 class="heading"><a href="index.html">
+          <span>GoldenCheetah Doc Ja v0.1 documentation</span></a></h1>
+        <h2 class="heading"><span>設定</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="manual.html">使い方</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="faq.html">よくある質問と回答</a>&#160;&#160;»
+        </p>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
-            
+      </div>
+      <div class="content">
+        
+        
   <div class="section" id="id1">
 <h1>設定<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
@@ -99,12 +102,11 @@ From 2007/02/05 until END, CP=347:
 </div>
 <p>The format of the file is simple. You define a range of time, starting with a date or &#8220;BEGIN&#8221; to indicate the oldest possible time and ending with a date or &#8220;END&#8221; to indicate the latest possible time. Then you put your critical power (CP) for that date range. Then you list your zones, where each zone has a number, a name, a minimum power value, and a maximum power value. You can have as many time ranges and zones as you like. Most people enter a new time range every time their critical power goes up&#8211;right after a fitness test, for example.</p>
 <p>NOTE: By default, Mac OS&#8217;s TextEdit will try and save the power.zones file with a .txt extension. Use the menu command &#8220;Format-&gt;Make Plain Text&#8221; to get it to let you save the file with a .zones extension instead.</p>
-<p>Legacy Command-Line Tools</p>
-<p>You can still build the older, command-line tools from the source code, but we no longer include them in releases. You can find documentation for them here.</p>
 </div>
 <div class="section" id="id3">
 <h2>シーズンファイル<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>自分にとっての区切りの日付を入れる。入力した日付はCPカーブプロットの右下のタブに反映され、期間別のCPカーブを見られるようになる。:</p>
+<p>一定期間のパフォーマンスを切り分けるには、シーズンファイル(seasons.xml)を作成する必要があります。
+シーズンファイルはライドデータと同じディレクトリに新規作成し、次のフォーマットで記述します。:</p>
 <div class="highlight-python"><pre>&lt;?xml version="1.0"?&gt;
 &lt;seasons&gt;
   &lt;season&gt;
@@ -117,6 +119,28 @@ From 2007/02/05 until END, CP=347:
     &lt;startdate&gt;2009-12-01&lt;/startdate&gt;
     &lt;enddate&gt;2010-10-01&lt;/enddate&gt;
   &lt;/season&gt;
+&lt;/seasons&gt;</pre>
+</div>
+<p>startdateからenddateまでが一つのシーズンとして定義され、 <em>Cirtical Power Plot</em> のウィンドウで切り替えることができます。</p>
+<img alt="_images/gc_cp_seasons.png" src="_images/gc_cp_seasons.png" />
+<p>シーズンを追加するには&lt;season&gt;〜&lt;/season&gt;までを追記します。:</p>
+<div class="highlight-python"><pre>&lt;?xml version="1.0"?&gt;
+&lt;seasons&gt;
+  &lt;season&gt;
+    &lt;name&gt;Long Ago&lt;/name&gt;
+    &lt;startdate&gt;2005-01-01&lt;/startdate&gt;
+    &lt;enddate&gt;2009-05-01&lt;/enddate&gt;
+  &lt;/season&gt;
+  &lt;season&gt;
+    &lt;name&gt;Road Season 2010&lt;/name&gt;
+    &lt;startdate&gt;2009-12-01&lt;/startdate&gt;
+    &lt;enddate&gt;2010-10-01&lt;/enddate&gt;
+  &lt;/season&gt;
+  &lt;season&gt; &lt;!-- cut here --&gt;
+    &lt;name&gt;Road Season 2011&lt;/name&gt;
+    &lt;startdate&gt;2010-11-15&lt;/startdate&gt;
+    &lt;enddate&gt;2011-10-01&lt;/enddate&gt;
+  &lt;/season&gt; &lt;!-- cut here --&gt;
 &lt;/seasons&gt;</pre>
 </div>
 </div>
@@ -146,58 +170,19 @@ cat &gt;&gt; environment.plist</pre>
 </div>
 
 
-          </div>
-        </div>
       </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">設定</a><ul>
-<li><a class="reference internal" href="#id2">パワーゾーンの設定</a></li>
-<li><a class="reference internal" href="#id3">シーズンファイル</a></li>
-<li><a class="reference internal" href="#macosx">MacOSX上で日本語入力を行う</a></li>
-</ul>
-</li>
-</ul>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="manual.html">使い方</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="faq.html">よくある質問と回答</a>&#160;&#160;»
+        </p>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="manual.html"
-                        title="previous chapter">実行</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/config.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" size="18" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="manual.html" title="実行"
-             >previous</a> |</li>
-        <li><a href="index.html">GoldenCheetah Doc Ja v0.1 documentation</a> &raquo;</li> 
-      </ul>
-    </div>
+
     <div class="footer">
         &copy; Copyright 2010, Mitsukuni Sato &lt;mitsukuni.sato@gmail.com&gt;.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0b1.

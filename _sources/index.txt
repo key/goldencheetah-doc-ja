@@ -15,6 +15,7 @@ Contents:
    install
    manual
    config
+   faq
 
 Indices and tables
 ==================

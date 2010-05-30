@@ -1,8 +1,8 @@
 ****************************
-実行
+使い方
 ****************************
 
-GoldenCheetahの起動
+はじめの一歩
 ===============================================
 
 MacOSX上でGoldenCheetahを起動するにはアプリケーションフォルダを開き、GoldenCheetahアイコンをダブルクリックしてください。Linux上でGoldenCheetahを起動するにはコマンドラインから *GoldenCheetah* とタイプしてください。
@@ -21,11 +21,22 @@ MacOSX上でGoldenCheetahを起動するにはアプリケーションフォル�
 .. image:: images/gc_main_window.png
 
 メインウィンドウにはもちろん *ライド* [#f1]_ は存在しません。
-ライドはCycleOps CerevoやSRM PowerControlなどサイクルコンピューターからの直接ダウンロード、他のトレーニングツールの保存データを取り込むことで作成されます。
+ライドはCycleOps CervoやSRM PowerControlなどサイクルコンピューターからの直接ダウンロード、他のトレーニングツールの保存データを取り込むことで作成されます。
 また、不幸にも何らかのトラブルでデータが保存されていない場合には、手動でトレーニング時間や距離を入力することでBikeScore / DanielsPointを推定することも出来ます。 [#f2]_
 
-PowerTap / SRMから直接データを取り込むには *Ride* メニューから *Download from device...* を選択します。
-ファイルを取り込むには *Ride* メニューから *Import from file...* を選択します。
+ライドデータのダウンロード/取り込み
+===============================================
+
+デバイスからデータを直接ダウンロードするには *Ride* メニューから *Download from device...* を選択します。
+
+* Saris CycleOps Cervo
+* SRM Power Control
+
+ファイルを取り込むには *Ride* メニューから *Import from file...* を選択します。GoldenCheetahは以下のファイル形式に対応しています。
+
+* TrainingPeaks
+
+ * WKO+ v2 / v3
 
 * Garmin
 
@@ -34,14 +45,25 @@ PowerTap / SRMから直接データを取り込むには *Ride* メニューか�
 
 * CycleOps
 
- * Cerevo
  * PowerAgent CSVファイル
+
+* Polar
+
+ * srdファイル
+
+* SRM PowerMeter
+
+ * srmファイル
 
 
 ライドをダウンロードするか取り込みを行うと、 *"Ride Summary"* ページで乗車時間や平均出力などの、シンプルな統計を見ることが出来ます。
 また、 *"Notes"* タブではライドのメモを記録することが出来ます。
 
 .. image:: images/gc_ride_summary.png
+
+
+メインウィンドウ以外の使い方
+=================================================
 
 ウィンドウ上部の *"Ride Plot"* タブをクリックすると、ライド全体の速度、出力、ケイデンス、心拍数、標高などのグラフを見ることが出来ます。
 
@@ -60,10 +82,6 @@ PowerTap / SRMから直接データを取り込むには *Ride* メニューか�
 .. image:: images/gc_cp_plot.png
 
 次のような考察の助けになるでしょう。:
-
-In this example, the blue line is right around the 14-second mark on the x-axis. So the values shown under "Today" and "All Rides", at the bottom, are the hardest the cyclist went for any 14-second period during the ride itself and during all rides he's ever recorded in GoldenCheetah. Since the two values are the same, he set a new personal record during this ride.
-
-この例では、
 
 *Critical Power Plot* は、インターバル練習やタイムトライアルを行う際にとても役に立ちます。あなたが2分インターバル（3分REST)を6本行なおうとしたとします。 *Critical Power Plot* のグラフをクリックし、ウィンドウ下部の *"Interval Duration "* が2分になるようにドラッグし、 *"Best"* の値を読みましょう。その値が、あなたの過去に行った最もハードなインターバルトレーニングの出力です。さあ頑張って！
 

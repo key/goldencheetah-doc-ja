@@ -73,15 +73,12 @@ The format of the file is simple. You define a range of time, starting with a da
 
 NOTE: By default, Mac OS's TextEdit will try and save the power.zones file with a .txt extension. Use the menu command "Format->Make Plain Text" to get it to let you save the file with a .zones extension instead.
 
-Legacy Command-Line Tools
-
-You can still build the older, command-line tools from the source code, but we no longer include them in releases. You can find documentation for them here.
-
 
 シーズンファイル
 ==========================
 
-自分にとっての区切りの日付を入れる。入力した日付はCPカーブプロットの右下のタブに反映され、期間別のCPカーブを見られるようになる。::
+一定期間のパフォーマンスを切り分けるには、シーズンファイル(seasons.xml)を作成する必要があります。
+シーズンファイルはライドデータと同じディレクトリに新規作成し、次のフォーマットで記述します。::
 
  <?xml version="1.0"?>
  <seasons>
@@ -95,6 +92,31 @@ You can still build the older, command-line tools from the source code, but we n
      <startdate>2009-12-01</startdate>
      <enddate>2010-10-01</enddate>
    </season>
+ </seasons>
+
+startdateからenddateまでが一つのシーズンとして定義され、 *Cirtical Power Plot* のウィンドウで切り替えることができます。
+
+.. image:: images/gc_cp_seasons.png
+
+シーズンを追加するには<season>〜</season>までを追記します。::
+
+ <?xml version="1.0"?>
+ <seasons>
+   <season>
+     <name>Long Ago</name>
+     <startdate>2005-01-01</startdate>
+     <enddate>2009-05-01</enddate>
+   </season>
+   <season>
+     <name>Road Season 2010</name>
+     <startdate>2009-12-01</startdate>
+     <enddate>2010-10-01</enddate>
+   </season>
+   <season> <!-- cut here -->
+     <name>Road Season 2011</name>
+     <startdate>2010-11-15</startdate>
+     <enddate>2011-10-01</enddate>
+   </season> <!-- cut here -->
  </seasons>
 
 
