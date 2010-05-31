@@ -2,6 +2,32 @@
 設定
 ********************************
 
+言語と計測単位の設定
+===============================================
+
+GoldenCheetahは様々な国で利用することを想定しており、英語、フランス語、日本語がサポートされています。また、計測単位としてヤード・ポンド法、メーター法が利用可能です。
+
+GoldenCheetahを日本語、メーター法で使用するには環境設定ダイアログを開きます。
+
+.. image:: images/gc_config.png
+
+環境設定画面の *Basic Settings* タブには言語の設定項目( *Language* )と単位の設定項目( *Unit of Measurement* )があります。
+
+.. image:: images/gc_preference.png
+   :width: 640
+
+*Language* のプルダウンメニューを開くと、English, French, Japaneseの項目があります。Japaneseを選択してください。
+
+.. image:: images/gc_language.png
+   :width: 640
+
+次に、 *Unit of Measurement* のプルダウンを開いてください。ImperialとMetricという2つの項目があります。メーター法を利用するにはMetricを選択します。
+
+.. image:: images/gc_unit.png
+   :width: 640
+
+ダイアログの右下にある *Save* をクリックして設定を保存し、次に *Close* をクリックして環境設定ダイアログを終了します。GoldenCheetahを終了し、再度起動します。
+
 パワーゾーンの設定
 ===============================================
 

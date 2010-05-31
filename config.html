@@ -50,7 +50,20 @@
   <div class="section" id="id1">
 <h1>設定<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
-<h2>パワーゾーンの設定<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>言語と計測単位の設定<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>GoldenCheetahは様々な国で利用することを想定しており、英語、フランス語、日本語がサポートされています。また、計測単位としてヤード・ポンド法、メーター法が利用可能です。</p>
+<p>GoldenCheetahを日本語、メーター法で使用するには環境設定ダイアログを開きます。</p>
+<img alt="_images/gc_config.png" src="_images/gc_config.png" />
+<p>環境設定画面の <em>Basic Settings</em> タブには言語の設定項目( <em>Language</em> )と単位の設定項目( <em>Unit of Measurement</em> )があります。</p>
+<img alt="_images/gc_preference.png" src="_images/gc_preference.png" style="width: 640px;" />
+<p><em>Language</em> のプルダウンメニューを開くと、English, French, Japaneseの項目があります。Japaneseを選択してください。</p>
+<img alt="_images/gc_language.png" src="_images/gc_language.png" style="width: 640px;" />
+<p>次に、 <em>Unit of Measurement</em> のプルダウンを開いてください。ImperialとMetricという2つの項目があります。メーター法を利用するにはMetricを選択します。</p>
+<img alt="_images/gc_unit.png" src="_images/gc_unit.png" style="width: 640px;" />
+<p>ダイアログの右下にある <em>Save</em> をクリックして設定を保存し、次に <em>Close</em> をクリックして環境設定ダイアログを終了します。GoldenCheetahを終了し、再度起動します。</p>
+</div>
+<div class="section" id="id3">
+<h2>パワーゾーンの設定<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>If you look back at the screenshot above, you may notice that there are several things shown in the &#8220;Ride Summary&#8221; tab that aren&#8217;t on your version. The picture above shows a non-zero &#8220;Bike Score&#8221;, and there&#8217;s a list of how much time the cyclist spent in each &#8220;Power Zone&#8221; during the ride as well.</p>
 <p>BikeScore(TM) is a measure of the physiological stress you underwent during a ride. It was developed by Dr. Philip Skiba, and you can read more about it in an article he wrote.</p>
 <p>For GoldenCheetah to compute your BikeScore and the time spent in each power zone, you first need to tell it what your power zones and critical power are. You can define your power zones however you like, maybe using the ones defined by Joe Friel, for example. Your critical power should be the maximum power you can sustain over an hour. Some people call this your &#8220;lactate threshold&#8221; or &#8220;functional threshold power&#8221;. Our friend Bill says a rose by any other name would smell as sweet.</p>
@@ -103,8 +116,8 @@ From 2007/02/05 until END, CP=347:
 <p>The format of the file is simple. You define a range of time, starting with a date or &#8220;BEGIN&#8221; to indicate the oldest possible time and ending with a date or &#8220;END&#8221; to indicate the latest possible time. Then you put your critical power (CP) for that date range. Then you list your zones, where each zone has a number, a name, a minimum power value, and a maximum power value. You can have as many time ranges and zones as you like. Most people enter a new time range every time their critical power goes up&#8211;right after a fitness test, for example.</p>
 <p>NOTE: By default, Mac OS&#8217;s TextEdit will try and save the power.zones file with a .txt extension. Use the menu command &#8220;Format-&gt;Make Plain Text&#8221; to get it to let you save the file with a .zones extension instead.</p>
 </div>
-<div class="section" id="id3">
-<h2>シーズンファイル<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>シーズンファイル<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>一定期間のパフォーマンスを切り分けるには、シーズンファイル(seasons.xml)を作成する必要があります。
 シーズンファイルはライドデータと同じディレクトリに新規作成し、次のフォーマットで記述します。:</p>
 <div class="highlight-python"><pre>&lt;?xml version="1.0"?&gt;
